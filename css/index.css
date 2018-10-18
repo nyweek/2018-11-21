@@ -1,0 +1,264 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Avenir Next';
+}
+
+.coverindex {
+  columns: 3;
+  column-rule: 1px solid #fff;
+  padding: 10px;
+  column-gap: 14 px;
+}
+
+.coverindex p {
+  margin: 0;
+}
+
+.coverindex h4 {
+  font-size: 15pt;
+  line-height: 18pt;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.6pt;
+}
+
+.coverindex h5 {
+  font-size: 13pt;
+  color: white;
+  margin: 0;
+  opacity: 0.6;
+}
+
+.coverindex h4 .author {
+  font-size: 10pt;
+  color: white;
+  font-weight: 100;
+}
+
+.feature {
+  text-align: right;
+  padding: 130px 40px 0;
+}
+
+.feature-author h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  opacity: 0.7;
+  margin: 2px 0 0;
+  text-transform: uppercase;
+}
+
+.feature h1 {
+  font-size: 49pt;
+  line-height: 50pt;
+  font-family: 'Ingeborg';
+  color: white;
+  font-weight: 100;
+}
+
+@media (max-width: 412px) {
+  .feature h1 {
+    font-size: 32pt;
+    line-height: 34pt;
+    font-family: 'Ingeborg';
+    color: white;
+    font-weight: 100;
+    margin: 0;
+  }
+
+  .coverindex h4 {
+    font-size: 11pt;
+    line-height: 11pt;
+  }
+
+  .coverindex h5 {
+    font-size: 8pt;
+    color: white;
+  }
+
+  .feature {
+    padding: 150px 20px 0;
+  }
+}
+.coverimage {
+  height: 1152px;
+
+  background: url(../media/cover-back.jpg);
+}
+
+.header {
+  padding: 5px 10px 0;
+}
+
+.img90 {
+  border-color: hotpink;
+}
+
+.issue {
+  font-size: 6pt;
+  line-height: 6pt;
+  padding: 10px 10px 0;
+}
+
+nav {
+  font-size: 8pt;
+  line-height: 8pt;
+  padding: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.page2 {
+  width: calc(100vw);
+}
+
+.col2 {
+  columns: 2;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  columns: 2;
+  column-fill: balance-all;
+  scroll-snap-type: x mandatory;
+  scroll-snap-points-x: repeat(100vw);
+}
+
+.page {
+  width: 100vw;
+  flex: 0 0 auto;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-align: start;
+}
+
+.pagew {
+  width: 200vw;
+  flex: 0 0 auto;
+}
+
+.nomr {
+  padding-right: 0;
+  width: calc(100vw + 1px);
+}
+
+.index {
+  font-size: 8.5pt;
+  line-height: 9.1pt;
+  column-gap: 20px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  word-wrap: break-word;
+  padding: 40px 90px 30px 60px;
+  letter-spacing: -0.3pt;
+  columns: 1;
+  margin-bottom: 20px;
+}
+
+.index img {
+  max-width: 200px;
+}
+
+.index2 {
+  font-size: 8.5pt;
+  line-height: 9.1pt;
+  column-gap: 20px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  word-wrap: break-word;
+  padding: 0px 40px 60px 60px;
+  letter-spacing: -0.3pt;
+  columns: 1;
+
+  margin-bottom: 20px;
+}
+
+.index h1 {
+  font-family: 'Bungee';
+  font-size: 48pt;
+  line-height: 5pt;
+  font-weight: 700;
+  margin: 80px 0 70px;
+  color: #cb0100;
+}
+
+.index h2 {
+  margin: 30px 0 5px;
+  font-size: 16pt;
+  line-height: 17pt;
+}
+
+.index h3 {
+  margin: 5px 0;
+  font-size: 12pt;
+  line-height: 12pt;
+}
+
+.index p {
+  margin: 0;
+}
+
+@media (min-width: 846px) {
+  .page {
+    width: 50vw;
+  }
+
+  .pagew {
+    width: 150vw;
+  }
+
+  .nomr {
+    padding: 20px;
+    width: calc(50vw + 1px);
+  }
+}
+
+@media (min-width: 3048px) {
+  .scrolling-wrapper-flexbox {
+    columns: 4;
+  }
+
+  .page {
+    width: 25vw;
+  }
+
+  .pagew {
+    width: 50vw;
+  }
+}
+
+.ad {
+  padding: 0px;
+}
+
+.archive hr {
+  border: .5px solid black;
+  margin: 20px 0;
+}
+
+.archive a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #cb0100;
+}
+
+.archive a:hover {
+  text-decoration: underline;
+
+}

@@ -1,0 +1,15 @@
+    h1.hero {
+      font-family: 'Avenir Next';
+      font-size: 42px;
+      font-weight: 100;
+      margin: 0;
+      padding: 15px;
+      margin: 0;
+      line-height: 48px;
+      color: rgb(199, 0, 149);
+    }
+
+    h1.hero a {
+      color: rgb(199, 0, 149);
+      text-decoration: none;
+    }
