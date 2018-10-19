@@ -1,4 +1,3 @@
-import subwaymap from '../_working/media/subwaymap.png';
 ('use strict');
 
 var cacheVersion = 5;
@@ -88,12 +87,12 @@ this.addEventListener('fetch', event => {
         let catpowerregex = /catpower/g;
         let datestimesregex = /datestimes/g;
         let elvisregex = /elvis/g;
-        let subway = /subway/g;
+        let subwayregex = /subway/g;
 
         let catpower = event.request.url.match(catpowerregex);
         let datestimes = event.request.url.match(datestimesregex);
         let elvis = event.request.url.match(elvisregex);
-        let subway = event.request.url.match(subway);
+        let subway = event.request.url.match(subwayregex);
 
         if (catpower && catpower.length > 0) {
           return caches.match(catpowerUrl);
