@@ -50,6 +50,7 @@ this.addEventListener('install', event => {
         'media/ragandbone.jpg',
         'media/watch.jpg',
         'media/watch.png',
+        'media/subwaymap.png',
         'fonts/hinted-AvenirNext-Bold.woff',
         'fonts/hinted-AvenirNext-Bold.woff2',
         'fonts/hinted-AvenirNext-Italic.woff',
