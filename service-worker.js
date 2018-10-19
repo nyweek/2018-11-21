@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = 1;
+var cacheVersion = 2;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -17,8 +17,10 @@ this.addEventListener('install', event => {
         'datestimes.html',
         'elvis.html',
         'catpower.html',
+        'subway.html',
         'favicon-32x32.png',
         'favicon-16x16.png',
+        'media/map.png',
         'media/nyweek.png',
         'media/ad3.jpg',
         'media/beacon.jpg',
