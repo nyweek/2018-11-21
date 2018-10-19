@@ -1,6 +1,7 @@
-'use strict';
+import subwaymap from '../_working/media/subwaymap.png';
+('use strict');
 
-var cacheVersion = 4;
+var cacheVersion = 5;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -8,6 +9,7 @@ const indexUrl = 'index.html';
 const catpowerUrl = 'catpower.html';
 const elvisUrl = 'elvis.html';
 const datestimesUrl = 'datestimes.html';
+const subwayUrl = 'subway.html';
 
 this.addEventListener('install', event => {
   event.waitUntil(
@@ -65,7 +67,8 @@ this.addEventListener('install', event => {
         indexUrl,
         catpowerUrl,
         elvisUrl,
-        datestimesUrl
+        datestimesUrl,
+        subwayUrl
       ]);
     })
   );
@@ -85,10 +88,12 @@ this.addEventListener('fetch', event => {
         let catpowerregex = /catpower/g;
         let datestimesregex = /datestimes/g;
         let elvisregex = /elvis/g;
-        
+        let subway = /subway/g;
+
         let catpower = event.request.url.match(catpowerregex);
         let datestimes = event.request.url.match(datestimesregex);
         let elvis = event.request.url.match(elvisregex);
+        let subway = event.request.url.match(subway);
 
         if (catpower && catpower.length > 0) {
           return caches.match(catpowerUrl);
@@ -102,9 +107,11 @@ this.addEventListener('fetch', event => {
           return caches.match(elvisUrl);
         }
 
-        return caches.match(indexUrl);
+        if (subway && subway.length > 0) {
+          return caches.match(subwayUrl);
+        }
 
-    
+        return caches.match(indexUrl);
       })
     );
   } else {
