@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = 3;
+var cacheVersion = 4;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -20,7 +20,7 @@ this.addEventListener('install', event => {
         'subway.html',
         'favicon-32x32.png',
         'favicon-16x16.png',
-        'media/map.png',
+        'media/subwaymap.png',
         'media/nyweek.png',
         'media/ad3.jpg',
         'media/beacon.jpg',
@@ -50,7 +50,6 @@ this.addEventListener('install', event => {
         'media/ragandbone.jpg',
         'media/watch.jpg',
         'media/watch.png',
-        'media/subwaymap.png',
         'fonts/hinted-AvenirNext-Bold.woff',
         'fonts/hinted-AvenirNext-Bold.woff2',
         'fonts/hinted-AvenirNext-Italic.woff',
