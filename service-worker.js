@@ -1,6 +1,6 @@
 ('use strict');
 
-var cacheVersion = 5;
+var cacheVersion = 6;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
