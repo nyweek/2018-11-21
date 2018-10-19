@@ -4,7 +4,10 @@ var cacheVersion = 1;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
-const offlineUrl = 'index.html';
+const indexUrl = 'index.html';
+const catpowerUrl = 'catpower.html';
+const elvisUrl = 'elvis.html';
+const datestimesUrl = 'datestimes.html';
 
 this.addEventListener('install', event => {
   event.waitUntil(
@@ -12,7 +15,10 @@ this.addEventListener('install', event => {
       return cache.addAll([
         'index.html',
         'datestimes.html',
+        'elvis.html',
         'catpower.html',
+        'favicon-32x32.png',
+        'favicon-16x16.png',
         'media/nyweek.png',
         'media/ad3.jpg',
         'media/beacon.jpg',
@@ -54,7 +60,10 @@ this.addEventListener('install', event => {
         'fonts/hinted-Bungee-Regular.woff2',
         'fonts/hinted-Ingeborg-Block.woff',
         'fonts/hinted-Ingeborg-Block.woff2',
-        offlineUrl
+        indexUrl,
+        catpowerUrl,
+        elvisUrl,
+        datestimesUrl
       ]);
     })
   );
@@ -71,7 +80,29 @@ this.addEventListener('fetch', event => {
     event.respondWith(
       fetch(event.request.url).catch(error => {
         // Return the offline page
-        return caches.match(offlineUrl);
+        let catpowerregex = /catpower/g;
+        let datestimesregex = /datestimes/g;
+        let elvisregex = /elvis/g;
+        
+        let catpower = event.request.url.match(catpowerregex);
+        let datestimes = event.request.url.match(datestimesregex);
+        let elvis = event.request.url.match(elvisregex);
+
+        if (catpower && catpower.length > 0) {
+          return caches.match(catpowerUrl);
+        }
+
+        if (datestimes && datestimes.length > 0) {
+          return caches.match(datestimesUrl);
+        }
+
+        if (elvis && elvis.length > 0) {
+          return caches.match(elvisUrl);
+        }
+
+        return caches.match(indexUrl);
+
+    
       })
     );
   } else {
