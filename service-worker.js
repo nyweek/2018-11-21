@@ -21,6 +21,7 @@ this.addEventListener('install', event => {
         'subway.html',
         'favicon-32x32.png',
         'favicon-16x16.png',
+        'media/android-chrome-192x192.png',
         'media/subwaymap.png',
         'media/nyweek.png',
         'media/ad3.jpg',
