@@ -1,15 +1,15 @@
 'use strict';
 
-var cacheVersion = 37;
+var cacheVersion = 39;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
-const offlineUrl = 'index.html';
-const indexUrl = 'index.html';
-const catpowerUrl = 'catpower.html';
-const elvisUrl = 'elvis.html';
-const datestimesUrl = 'datestimes.html';
-const subwayUrl = 'subway.html';
+
+const indexUrl = './index.html';
+const catpowerUrl = './catpower.html';
+const elvisUrl = './elvis.html';
+const datestimesUrl = './datestimes.html';
+const subwayUrl = './subway.html';
 
 const cacheList = [
   './index.html',
@@ -42,7 +42,7 @@ const cacheList = [
   './media/cat-power-1.png',
   './media/cat-power-2.png',
   './media/cat-power2.jpg',
- 
+
   './media/cat.jpg',
   './media/cover-back.jpg',
   './media/datestimes.png',
@@ -102,7 +102,6 @@ this.addEventListener('install', event => {
         './fonts/hinted-Bungee-Regular.woff2',
         './fonts/hinted-Ingeborg-Block.woff',
         './fonts/hinted-Ingeborg-Block.woff2',
-
         indexUrl,
         catpowerUrl,
         elvisUrl,
