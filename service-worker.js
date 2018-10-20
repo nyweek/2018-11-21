@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = 31;
+var cacheVersion = 33;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -42,10 +42,9 @@ const cacheList = [
   './media/cat-power-1.png',
   './media/cat-power-2.png',
   './media/cat-power2.jpg',
-  './media/cat-power4.png',
+ 
   './media/cat.jpg',
   './media/cover-back.jpg',
-  './media/datesandtimes.png',
   './media/datestimes.png',
 
   './media/elvis1.png',
@@ -83,9 +82,10 @@ this.addEventListener('install', event => {
         './media/eats.jpg',
         './media/guide.jpg',
         './media/io.jpg',
-        './media/subwaymap.png',
+        './media/subway.svg',
         './android-chrome-192x192.png',
-
+        './media/datesandtimes.png',
+        './media/cat-power4.png',
         './fonts/hinted-AvenirNext-Bold.woff',
         './fonts/hinted-AvenirNext-Bold.woff2',
         './fonts/hinted-AvenirNext-Italic.woff',
