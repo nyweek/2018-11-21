@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = 30;
+var cacheVersion = 31;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -28,7 +28,7 @@ const cacheList = [
   './favicon-32x32.png',
   './favicon-16x16.png',
   './android-chrome-192x192.png',
-  './media/subwaymap.png',
+  './media/subway.scg',
   './media/nyweek.png',
   './media/ad3.jpg',
   './media/beacon.jpg',
