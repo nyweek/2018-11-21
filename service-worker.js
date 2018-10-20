@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = 34;
+var cacheVersion = 35;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -86,6 +86,9 @@ this.addEventListener('install', event => {
         './android-chrome-192x192.png',
         './media/datesandtimes.png',
         './media/cat-power4.png',
+        './media/cat.jpg',
+        './media/cat-power-1.png',
+        './media/cat-power2.jpg',
         './fonts/hinted-AvenirNext-Bold.woff',
         './fonts/hinted-AvenirNext-Bold.woff2',
         './fonts/hinted-AvenirNext-Italic.woff',
