@@ -45,10 +45,18 @@
       display: flex;
       flex-wrap: nowrap;
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
       columns: 2;
-      scroll-snap-type: proximity
+      scroll-snap-type: x mandatory;
+      scroll-snap-points-x: repeat(100vw);
+      width: 400vw;
     }
+
+    @media (min-width: 3048px) {
+      .scrolling-wrapper-flexbox {
+        columns: 4;
+        width: 200vw;
+      }
+    }∂
 
     .page {
       width: 100vw;

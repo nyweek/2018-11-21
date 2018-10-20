@@ -50,7 +50,16 @@
       column-fill: balance-all;
       scroll-snap-type: x mandatory;
       scroll-snap-points-x: repeat(100vw);
+      width: 400vw;
     }
+
+    @media (min-width: 3048px) {
+      .scrolling-wrapper-flexbox {
+        columns: 4;
+        width: 200vw;
+      }
+    }
+
 
     .page {
       width: 100vw;
