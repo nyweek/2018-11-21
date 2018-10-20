@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = 27;
+var cacheVersion = 29;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -37,7 +37,7 @@ const cacheList = [
   './media/cover-back.jpg',
   './media/watch',
   './media/cat-back.jpg',
- 
+
   './media/cat-power-0.jpg',
   './media/cat-power-1.png',
   './media/cat-power-2.png',
@@ -81,6 +81,10 @@ this.addEventListener('install', event => {
         './media/watch.jpg',
         './media/elviscover.png',
         './media/eats.jpg',
+        './media/guide.jpg',
+        './media/io.jpg',
+        './media/subwaymap.png',
+        './android-chrome-192x192.png',
 
         './fonts/hinted-AvenirNext-Bold.woff',
         './fonts/hinted-AvenirNext-Bold.woff2',
@@ -116,7 +120,33 @@ this.addEventListener('fetch', event => {
     event.respondWith(
       fetch(event.request.url).catch(error => {
         // Return the offline page
-        return caches.match(offlineUrl);
+        let catpowerregex = /catpower/g;
+        let datestimesregex = /datestimes/g;
+        let elvisregex = /elvis/g;
+        let subwayregex = /subway/g;
+
+        let catpower = event.request.url.match(catpowerregex);
+        let datestimes = event.request.url.match(datestimesregex);
+        let elvis = event.request.url.match(elvisregex);
+        let subway = event.request.url.match(subwayregex);
+
+        if (catpower && catpower.length > 0) {
+          return caches.match(catpowerUrl);
+        }
+
+        if (datestimes && datestimes.length > 0) {
+          return caches.match(datestimesUrl);
+        }
+
+        if (elvis && elvis.length > 0) {
+          return caches.match(elvisUrl);
+        }
+
+        if (subway && subway.length > 0) {
+          return caches.match(subwayUrl);
+        }
+
+        return caches.match(indexUrl);
       })
     );
   } else {
