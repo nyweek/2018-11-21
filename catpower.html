@@ -18,6 +18,7 @@
       font-family: 'Avenir Next';
       padding: 0;
       margin: 0;
+      background: black
     }
 
     img {
@@ -33,7 +34,7 @@
 
       columns: 2;
       overflow-x: scroll;
-      overflow-y: hidden;
+
       white-space: nowrap;
     }
 
@@ -42,33 +43,35 @@
       width: 100%;
     }
 
-    .scrolling-wrapper-flexbox {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      columns: 2;
-      column-fill: balance-all;
-      scroll-snap-type: x mandatory;
-      scroll-snap-points-x: repeat(100vw);
-      width: 400vw;
-    }
+   .scrolling-wrapper-flexbox {
+  columns: 1;
+  column-fill: balance;
+  scroll-snap-type: y mandatory;
 
-    @media (min-width: 3048px) {
-      .scrolling-wrapper-flexbox {
-        columns: 4;
-        width: 200vw;
-      }
-    }
+}
 
+@media (min-width: 920px) {
+  .scrolling-wrapper-flexbox {
+    columns: 2;
+    scroll-snap-type: y mandatory;
+  }
+  
+}
+
+@media (min-width: 3048px) {
+  .scrolling-wrapper-flexbox {
+    columns: 4;
+    scroll-snap-type: y mandatory;
+  }
+}
 
     .page {
       width: 100vw;
       flex: 0 0 auto;
       padding: 0;
       margin: 0;
-      height: 100vh;
-      overflow-y: scroll;
       scroll-snap-align: end;
+      
     }
 
     .pagew {
@@ -77,17 +80,7 @@
 
     }
 
-    @media (min-width:846px) {
-      .page {
-        width: 50vw;
 
-      }
-
-      .pagew {
-        width: 100vw;
-
-      }
-    }
 
     .back {
       background: url(media/cat-back.jpg);
@@ -100,11 +93,13 @@
     .content {
       line-height: 24pt;
       padding: 30px;
+      background: white;
     }
 
     .content2 {
       line-height: 24pt;
       padding: 180px 30px 80px;
+      background: white;
     }
 
     .dropcap {
@@ -165,7 +160,7 @@
       font-size: 8pt;
       margin-bottom: 20px;
       padding: 0 30px;
-      color: #c90900;
+      color: #fff;
       text-decoration: none;
 
     }
@@ -176,7 +171,7 @@
       margin-bottom: 20px;
       padding: 0 30px;
       text-align: right;
-      color: #c90900;
+      color: #fff;
       text-decoration: none;
     }
 

@@ -50,26 +50,41 @@
     }
 
     .scrolling-wrapper-flexbox {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      columns: 2;
-      column-fill: balance-all;
-      scroll-snap-type: x mandatory;
-      scroll-snap-points-x: repeat(100vw);
-      width: 400vw;
+      columns: 1;
+      column-fill: balance;
+      scroll-snap-type: y mandatory;
+
     }
 
     .page {
       width: 100vw;
-      flex: 0 0 auto;
       padding: 0;
       margin: 0;
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-align: end;
+    }
+
+    @media (min-width: 920px) {
+      .scrolling-wrapper-flexbox {
+        columns: 2;
+        scroll-snap-type: y mandatory;
+      }
+
+      .page {
+        width: 50vw;
+      }
 
     }
+
+    @media (min-width: 3048px) {
+      .scrolling-wrapper-flexbox {
+        columns: 4;
+        scroll-snap-type: y mandatory;
+      }
+      .page {
+        width: 25vw;
+      }
+    }
+
+
 
     .ad {
       padding: 15px 30px;
@@ -84,27 +99,13 @@
       min-height: 100vh;
     }
 
-    .pagew {
-      width: 200vw;
-      flex: 0 0 auto;
-
-    }
+    .pagew {}
 
 
 
 
 
-    @media (min-width:846px) {
-
-      .page {
-        width: 50vw;
-
-      }
-
-      .pagew {
-        width: 100vw;
-
-      }
+    @media (min-width:846px) {}
     }
 
     .back {
@@ -137,20 +138,7 @@
       margin: 0 0 20px;
     }
 
-    @media (min-width: 3048px) {
-      .scrolling-wrapper-flexbox {
-        columns: 4;
-        width: 200vw;
-      }
-
-      .page {
-        width: 25vw;
-      }
-
-      .pagew {
-        width: 50vw;
-      }
-    }
+    @media (min-width: 3048px) {}
 
     .photoblock,
     .photoblockad {
@@ -192,6 +180,10 @@
     h1.head {
       padding: 4px;
       margin-bottom: 5px;
+    }
+
+    .hero img {
+      width: 100%;
     }
   </style>
 </head>
