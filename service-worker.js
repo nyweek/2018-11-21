@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = 44;
+var cacheVersion = 45;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -82,7 +82,7 @@ this.addEventListener('install', event => {
         './media/eats.jpg',
         './media/guide.jpg',
         './media/io.jpg',
-        './media/subway.svg',
+        './media/subwaymap.png',
         './android-chrome-192x192.png',
         './media/datesandtimes.png',
         './media/cat-power-2.png',
