@@ -184,7 +184,6 @@
     }
 
     .mapimg {
-
       width: calc(2964px / 2);
       height: calc(3460px / 2);
       background: url(media/subwaymap.png);
@@ -205,12 +204,16 @@
 </head>
 
 <body>
-  <div class="map">
-    <div class="mapimg">
+  <div id="mapdiv" class="map">
+    <div id="mapimg" class="mapimg">
       <a href="index.html"><img class="logo" src="android-chrome-192x192.png"></a>
     </div>
   </div>
+  <script>
+    const map = document.getElementById('mapdiv');
+    map.scrollTo(80,470);
+  </script>
+</body> 
 
-</body>
 
 </html>
