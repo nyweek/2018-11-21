@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="zoom=.5,width=device-width, minimum-scale=1.0, maximum-scale=8.0, user-scalable=yes" />
+  <meta name="viewport" content="zoom=.2,width=device-width, minimum-scale=1.0, maximum-scale=12.0, user-scalable=yes" />
 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -184,20 +184,17 @@
     }
 
     .mapimg {
-      height: 100vh;
-      width: calc(100vh / 1.28);
-      background: url(media/subway.svg);
+
+      width: calc(3002px / 2);
+      height: calc(3630px / 2);
+      background: url(media/subwaymap.png);
       background-repeat: no-repeat;
-      background-position: top left'
+      background-position: top left;
+      background-size: 100%;
 
     }
 
-    @media (min-width:646px) {
-      .mapimg {
-        height: calc(100vw * 1.28);
-        width: 100vw;
-      }
-    }
+    @media (min-width:646px) {}
 
     .logo {
       position: fixed;
