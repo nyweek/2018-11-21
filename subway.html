@@ -205,15 +205,19 @@
 
 <body>
   <div id="mapdiv" class="map">
-    <div id="mapimg" class="mapimg">
+    <div id="mapimg" class="mapimg" onclick="center()">
       <a href="index.html"><img class="logo" src="android-chrome-192x192.png"></a>
     </div>
   </div>
   <script>
-    const map = document.getElementById('mapdiv');
-    map.scrollTo(80,470);
+    function center() {
+      const map = document.getElementById('mapdiv');
+      map.scrollTo(80, 470);
+    }
+
+    center();
   </script>
-</body> 
+</body>
 
 
 </html>
