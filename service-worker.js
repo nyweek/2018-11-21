@@ -1,95 +1,18 @@
 'use strict';
 
-var cacheVersion = 49;
+var cacheVersion = '8987bc45-0704-381f-a6b7-affd95b8ddda';
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
-
-const indexUrl = './index.html';
-const catpowerUrl = './catpower.html';
-const elvisUrl = './elvis.html';
-const datestimesUrl = './datestimes.html';
-const subwayUrl = './subway.html';
-
-const cacheList = [
-  './index.html',
-  './datestimes.html',
-  './elvis.html',
-  './catpower.html',
-  './subway.html',
-
-  './media/cat-cover.jpg',
-  './media/lovepersonals.png',
-  './media/ragandbone.jpg',
-  './media/watch.jpg',
-  './media/elviscover.png',
-  './media/eats.jpg',
-
-  './favicon-32x32.png',
-  './favicon-16x16.png',
-  './android-chrome-192x192.png',
-  './media/subway.scg',
-  './media/nyweek.png',
-  './media/ad3.jpg',
-  './media/beacon.jpg',
-  './media/bottom.jpg',
-  './media/bottom1.jpg',
-  './media/cover-back.jpg',
-  './media/watch',
-  './media/cat-back.jpg',
-
-  './media/cat-power-0.jpg',
-  './media/cat-power-1.png',
-  './media/cat-power-2.png',
-  './media/cat-power2.jpg',
-
-  './media/cat.jpg',
-  './media/cover-back.jpg',
-  './media/datestimes.png',
-
-  './media/elvis1.png',
-
-  './media/elvisback.jpg',
-  './media/elvistop.jpg',
-  './media/guide.jpg',
-  './media/io.jpg',
-
-  './fonts/hinted-AvenirNext-Bold.woff',
-  './fonts/hinted-AvenirNext-Bold.woff2',
-  './fonts/hinted-AvenirNext-Italic.woff',
-  './fonts/hinted-AvenirNext-Italic.woff2',
-  './fonts/hinted-AvenirNext-Regular.woff',
-  './fonts/hinted-AvenirNext-Regular.woff2',
-  './fonts/hinted-AvenirNext-UltraLight.woff',
-  './fonts/hinted-AvenirNext-UltraLight.woff2',
-  './fonts/hinted-Bungee-Regular.woff',
-  './fonts/hinted-Bungee-Regular.woff2',
-  './fonts/hinted-Ingeborg-Block.woff',
-  './fonts/hinted-Ingeborg-Block.woff2'
-];
 
 this.addEventListener('install', event => {
   event.waitUntil(
     caches.open(currentCache.offline).then(function(cache) {
       return cache.addAll([
-        './media/nyweek.png',
-        './media/cover-back.jpg',
-        './media/cat-cover.jpg',
-        './media/lovepersonals.png',
-        './media/ragandbone.jpg',
-        './media/watch.jpg',
-        './media/elviscover.png',
-        './media/eats.jpg',
-        './media/guide.jpg',
-        './media/io.jpg',
-        './media/subwaymap.png',
         './android-chrome-192x192.png',
-        './media/datesandtimes.png',
-        './media/cat-power-2.png',
-        './media/cat-power4.png',
-        './media/cat.jpg',
-        './media/cat-power-1.png',
-        './media/cat-power2.jpg',
+        './catpower.html',
+        './datestimes.html',
+        './elvis.html',
         './fonts/hinted-AvenirNext-Bold.woff',
         './fonts/hinted-AvenirNext-Bold.woff2',
         './fonts/hinted-AvenirNext-Italic.woff',
@@ -102,12 +25,26 @@ this.addEventListener('install', event => {
         './fonts/hinted-Bungee-Regular.woff2',
         './fonts/hinted-Ingeborg-Block.woff',
         './fonts/hinted-Ingeborg-Block.woff2',
-        indexUrl,
-        catpowerUrl,
-        elvisUrl,
-        datestimesUrl,
-        subwayUrl
-      ]);
+        './index.html',
+        './media/cat-cover.jpg',
+        './media/cat-power-1.png',
+        './media/cat-power-2.png',
+        './media/cat-power2.jpg',
+        './media/cat-power4.png',
+        './media/cat.jpg',
+        './media/cover-back.jpg',
+        './media/datesandtimes.png',
+        './media/eats.jpg',
+        './media/elviscover.png',
+        './media/guide.jpg',
+        './media/io.jpg',
+        './media/lovepersonals.png',
+        './media/nyweek.png',
+        './media/ragandbone.jpg',
+        './media/subwaymap.png',
+        './media/watch.jpg',
+        './subway.html',
+        ]);
     })
   );
 });
@@ -123,33 +60,43 @@ this.addEventListener('fetch', event => {
     event.respondWith(
       fetch(event.request.url).catch(error => {
         // Return the offline page
+        
         let catpowerregex = /catpower/g;
-        let datestimesregex = /datestimes/g;
-        let elvisregex = /elvis/g;
-        let subwayregex = /subway/g;
-
         let catpower = event.request.url.match(catpowerregex);
-        let datestimes = event.request.url.match(datestimesregex);
-        let elvis = event.request.url.match(elvisregex);
-        let subway = event.request.url.match(subwayregex);
 
         if (catpower && catpower.length > 0) {
-          return caches.match(catpowerUrl);
+          return caches.match('./catpower.html');
         }
+        
+        let datestimesregex = /datestimes/g;
+        let datestimes = event.request.url.match(datestimesregex);
 
         if (datestimes && datestimes.length > 0) {
-          return caches.match(datestimesUrl);
+          return caches.match('./datestimes.html');
         }
+        
+        let elvisregex = /elvis/g;
+        let elvis = event.request.url.match(elvisregex);
 
         if (elvis && elvis.length > 0) {
-          return caches.match(elvisUrl);
+          return caches.match('./elvis.html');
         }
+        
+        let indexregex = /index/g;
+        let index = event.request.url.match(indexregex);
+
+        if (index && index.length > 0) {
+          return caches.match('./index.html');
+        }
+        
+        let subwayregex = /subway/g;
+        let subway = event.request.url.match(subwayregex);
 
         if (subway && subway.length > 0) {
-          return caches.match(subwayUrl);
+          return caches.match('./subway.html');
         }
-
-        return caches.match(indexUrl);
+        
+        return caches.match('./index.html');
       })
     );
   } else {
