@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = '8987bc45-0704-381f-a6b7-affd95b8ddda';
+var cacheVersion = 'c7618c17-81ed-3b6e-8837-7267327fd409';
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -9,10 +9,11 @@ this.addEventListener('install', event => {
   event.waitUntil(
     caches.open(currentCache.offline).then(function(cache) {
       return cache.addAll([
-        './android-chrome-192x192.png',
         './catpower.html',
         './datestimes.html',
         './elvis.html',
+        './index.html',
+        './subway.html',
         './fonts/hinted-AvenirNext-Bold.woff',
         './fonts/hinted-AvenirNext-Bold.woff2',
         './fonts/hinted-AvenirNext-Italic.woff',
@@ -25,7 +26,6 @@ this.addEventListener('install', event => {
         './fonts/hinted-Bungee-Regular.woff2',
         './fonts/hinted-Ingeborg-Block.woff',
         './fonts/hinted-Ingeborg-Block.woff2',
-        './index.html',
         './media/cat-cover.jpg',
         './media/cat-power-1.png',
         './media/cat-power-2.png',
@@ -43,7 +43,6 @@ this.addEventListener('install', event => {
         './media/ragandbone.jpg',
         './media/subwaymap.png',
         './media/watch.jpg',
-        './subway.html',
         ]);
     })
   );
