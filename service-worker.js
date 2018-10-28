@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = '7487fa77-adc6-32d0-a3d7-3995463c0cf5';
+var cacheVersion = 'e30511c8-f321-3f4a-9afa-3f1cb4b33696';
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -26,6 +26,9 @@ this.addEventListener('install', event => {
         './fonts/hinted-Bungee-Regular.woff2',
         './fonts/hinted-Ingeborg-Block.woff',
         './fonts/hinted-Ingeborg-Block.woff2',
+        './media/beacon.jpg',
+        './media/bottom.jpg',
+        './media/bottom1.jpg',
         './media/cat-cover.jpg',
         './media/cat-power-1.png',
         './media/cat-power-2.png',
@@ -38,6 +41,7 @@ this.addEventListener('install', event => {
         './media/elviscover.png',
         './media/guide.jpg',
         './media/io.jpg',
+        './media/irving.jpg',
         './media/lovepersonals.png',
         './media/nyweek.png',
         './media/ragandbone.jpg',
