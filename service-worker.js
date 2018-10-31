@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = '13f23b53-a09b-306a-a24b-181101bd0759';
+var cacheVersion = '1bdad4b9-1238-3614-85fa-15afa2e3165c';
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
@@ -9,9 +9,7 @@ this.addEventListener('install', event => {
   event.waitUntil(
     caches.open(currentCache.offline).then(function(cache) {
       return cache.addAll([
-        './catpower.html',
         './datestimes.html',
-        './elvis.html',
         './index.html',
         './subway.html',
         './fonts/hinted-AvenirNext-Bold.woff',
@@ -29,16 +27,9 @@ this.addEventListener('install', event => {
         './media/beacon.jpg',
         './media/bottom.jpg',
         './media/bottom1.jpg',
-        './media/cat-cover.jpg',
-        './media/cat-power-1.png',
-        './media/cat-power-2.png',
-        './media/cat-power2.jpg',
-        './media/cat-power4.png',
-        './media/cat.jpg',
         './media/cover-back.jpg',
         './media/datesandtimes.png',
         './media/eats.jpg',
-        './media/elviscover.png',
         './media/guide.jpg',
         './media/io.jpg',
         './media/irving.jpg',
@@ -64,25 +55,11 @@ this.addEventListener('fetch', event => {
       fetch(event.request.url).catch(error => {
         // Return the offline page
         
-        let catpowerregex = /catpower/g;
-        let catpower = event.request.url.match(catpowerregex);
-
-        if (catpower && catpower.length > 0) {
-          return caches.match('./catpower.html');
-        }
-        
         let datestimesregex = /datestimes/g;
         let datestimes = event.request.url.match(datestimesregex);
 
         if (datestimes && datestimes.length > 0) {
           return caches.match('./datestimes.html');
-        }
-        
-        let elvisregex = /elvis/g;
-        let elvis = event.request.url.match(elvisregex);
-
-        if (elvis && elvis.length > 0) {
-          return caches.match('./elvis.html');
         }
         
         let indexregex = /index/g;
