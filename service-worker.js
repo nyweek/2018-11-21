@@ -1,6 +1,6 @@
 'use strict';
 
-var cacheVersion = '85d7ceae-b255-35a1-85f8-92ea669712d2';
+var cacheVersion = '76f82c04-aa21-3dbe-ae89-9b3bfc316ada';
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
